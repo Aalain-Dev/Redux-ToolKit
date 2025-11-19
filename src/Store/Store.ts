@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import habitSlice from '../Store/habitsslice'
+import slice from "../Store/habitsslice"
 export const store = configureStore({
   reducer: {
-    habits:habitSlice,
+    habits:slice,
   },
 })
 // Infer the `RootState` and `AppDispatch` types from the store itself

@@ -1,27 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface Habit {
-  id: number;
-  name: string;
-  frequency: string;
-  completedDates: string[];
-  createdAt: string;
-}
-
-interface HabitsState {
-  habits: Habit[];
-}
-
-const initialState: HabitsState = {
-  habits: [],
+const initialState = {
+  value: 0,
 };
-
-const HabitSlice = createSlice({
-  name: "habits",
+const slice = createSlice({
+  name: "appSlice",
   initialState,
   reducers: {
-    addHabit: () => {},
+    increment: (state, action) => {
+      state.value++;
+    },
+    decrement: (state, action) => {
+      state.value--;
+    },
   },
 });
-export const { addHabit } = HabitSlice.actions;
-export default HabitSlice.reducer;
+export const {increment, decrement} =  slice.actions;
+export default slice.reducer
